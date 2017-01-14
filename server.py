@@ -3,9 +3,11 @@ from flask import Flask, render_template, request, Response
 
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.config['PROXY'] = True
+
+app.config['DEBUG'] = False
+if app.config['DEBUG']:
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.config['PROXY'] = True
 
 
 def stream(request):
