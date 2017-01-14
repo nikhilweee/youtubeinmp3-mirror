@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, Response
 
 
 app = Flask(__name__)
-
-app.config['DEBUG'] = False
+app.config['PROXY'] = False
+app.config['DEBUG'] = True
 if app.config['DEBUG']:
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['PROXY'] = True
@@ -31,15 +31,15 @@ def home():
     if request.method == 'POST':
         # Initialize variables
         youtube_url = request.form['url']
+        start = request.form['start']
+        end = request.form['end']
         params = {
             'format': 'JSON',
             'video': youtube_url
         }
-        if 'start' in request.form:
-            start = request.form['start']
+        if start:
             params['start'] = get_sec(start)
-        if 'end' in request.form:
-            end = request.form['end']
+        if end:
             params['end'] = get_sec(end)
 
         # Optional: proxies
