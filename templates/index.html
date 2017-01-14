@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>Parallax Template - Materialize</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+        <nav class="red" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo white-text">YouTube &#9654; MP3</a>
+                <!-- <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#">Navbar Link</a>
+                    </li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li>
+                        <a href="#">Navbar Link</a>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse">
+                    <i class="material-icons white-text">menu</i>
+                </a> -->
+            </div>
+        </nav>
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center red-text">YouTube &#9654; MP3</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 grey-text">Hassle free music downloads</h5>
+                    </div>
+                    <div class="row center">
+
+                        <form action="{{ url_for('home') }}" method="post" class="col s12">
+                            <div class="row grey-text text-darken-2">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">link</i>
+                                    <input required id="url" name="url" type="text" class="validate" pattern="((http(s)?:\/\/)?)(www\.)?((youtube\.com\/)|(youtu.be\/))[\S]+">
+                                    <label for="url" data-error="Please enter a valid YouTube URL" data-success="Looks good">YouTube URL</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">play_arrow</i>
+                                    <input id="start_time" name="start" type="text" class="validate" pattern="^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$">
+                                    <label for="start_time" data-error="Please enter a valid time in MM:SS">Start Time</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">stop</i>
+                                    <input id="end_time" name="end" type="text" class="validate" pattern="^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$">
+                                    <label for="end_time" data-error="Please enter a valid time in MM:SS">End Time</label>
+                                </div>
+                            </div>
+
+                            <button class="btn waves-effect waves-light btn-large red" type="submit" name="download">Download MP3
+                                <i class="material-icons right">send</i>
+                            </button>
+
+                        </form>
+                    </div>
+                    <br><br>
+
+                </div>
+            </div>
+            <div class="parallax"><img src="{{ url_for('static', filename='img/background1.jpg') }}" alt="Unsplashed background img 1"></div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center red-text">
+                                <i class="material-icons">high_quality</i>
+                            </h2>
+                            <h5 class="center">HD Downloads</h5>
+
+                            <p class="light center">Music is served in the highest quality.</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center red-text">
+                                <i class="material-icons">assignment_ind</i>
+                            </h2>
+                            <h5 class="center">Prefilled ID3 Tags</h5>
+
+                            <p class="light center">Manage your music efficiently.</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center red-text">
+                                <i class="material-icons">flash_on</i>
+                            </h2>
+                            <h5 class="center">YouTubeInMP3 Inside</h5>
+
+                            <p class="light center">Powered by YouTubeInMP3.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="{{ url_for('static', filename='img/background2.jpg') }}" alt="Unsplashed background img 2"></div>
+        </div> -->
+
+        <!-- <div class="container">
+            <div class="section">
+
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3>
+                            <i class="mdi-content-send brown-text"></i>
+                        </h3>
+                        <h4>Contact Us</h4>
+                        <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo,
+                            ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed
+                            ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+
+        <!-- <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="{{ url_for('static', filename='img/background1.jpg') }}" alt="Unsplashed background img 3"></div>
+        </div> -->
+
+        <footer class="page-footer red">
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col s3 offset-s9">
+                        <h6 class="white-text">Interested?</h6>
+                        <ul>
+                            <li>
+                                <a class="github-button" href="https://github.com/nikhilweee/youtubeinmp3/fork" data-style="mega" aria-label="Fork nikhilweee/youtubeinmp3 on GitHub">Fork</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <div class="footer-copyright">
+                <div class="container center">
+                    Made with &#9829; and
+                    <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                </div>
+            </div>
+        </footer>
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        {# <script async defer src="https://buttons.github.io/buttons.js"></script>#}
+        <!-- <script src="{{ url_for('static', filename='js/init.js') }}"></script> -->
+
+    </body>
+</html>
